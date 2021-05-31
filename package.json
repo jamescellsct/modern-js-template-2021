@@ -1,0 +1,214 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "3.8.1",
+  "type": "module",
+  "description": "An ES20XX boilerplate with common frontend tasks using webpack 5 as build system.",
+  "keywords": [
+    "webpack",
+    "webpack5",
+    "boilerplate",
+    "frontend",
+    "workflow",
+    "preprocessor",
+    "framework",
+    "babel",
+    "typescript",
+    "postcss",
+    "sass",
+    "less",
+    "stylus",
+    "glsl"
+  ],
+  "homepage": "https://github.com/dmnsgn/frontend-boilerplate",
+  "bugs": {
+    "url": "https://github.com/dmnsgn/frontend-boilerplate/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Damien Seguin",
+    "url": "https://twitter.com/dmnsgn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmnsgn/frontend-boilerplate"
+  },
+  "scripts": {
+    "favicons": "node ./config/scripts/favicons.js",
+    "sitemap": "node ./config/scripts/sitemap.js",
+    "robotstxt": "node ./config/scripts/robotstxt.js",
+    "clean": "node ./config/scripts/clean.js",
+    "lint": "DEBUG=eslint:cli-engine eslint '{,!(dist)/**/}*.{js,cjs,mjs,jsx}'",
+    "format": "prettier '{,!(dist)/**/}*.{js,json,css,md,svg,xml}' --write",
+    "format:check": "prettier '{,!(dist)/**/}*.{js,json,css,md,svg,xml}' --check",
+    "dev:webpack": "cross-env NODE_ENV=development node --trace-deprecation ./config/scripts/run.js",
+    "prod:webpack": "cross-env NODE_ENV=production node ./config/scripts/run.js",
+    "dev": "run-p favicons dev:*",
+    "prod": "run-s clean favicons prod:* && run-p sitemap robotstxt",
+    "start": "npm run dev",
+    "build": "npm run prod"
+  },
+  "config": {
+    "title": "Frontend Boilerplate",
+    "url": "https://dmnsgn.me",
+    "lang": "en",
+    "description": "An ES20XX boilerplate with common frontend tasks using webpack 5 as build system.",
+    "imageWidth": "1920",
+    "imageHeight": "1080",
+    "type": "website",
+    "card": "summary_large_image",
+    "copyright": "MIT - Damien Seguin",
+    "handle": "@dmnsgn",
+    "analyticsUA": "UA-XXXXX-X",
+    "pages": [
+      {
+        "id": "index",
+        "template": "templates/index.ejs",
+        "name": "Home"
+      }
+    ]
+  },
+  "dependencies": {
+    "core-js": "^3.11.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.15",
+    "@babel/plugin-proposal-function-sent": "^7.12.13",
+    "@babel/plugin-proposal-json-strings": "^7.13.8",
+    "@babel/plugin-proposal-throw-expressions": "^7.12.13",
+    "@babel/plugin-proposal-unicode-property-regex": "^7.12.13",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-typescript": "^7.13.0",
+    "@prettier/plugin-xml": "^0.13.1",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-modern-regexp": "^0.0.6",
+    "babel-plugin-transform-regexp-constructors": "^0.4.3",
+    "chalk": "^4.1.1",
+    "compression-webpack-plugin": "^7.1.2",
+    "convert-assets-webpack-plugin": "^1.1.0",
+    "critters-webpack-plugin": "^2.5.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^2.0.0",
+    "del": "^6.0.0",
+    "ejs-loader": "^0.5.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "favicons": "github:itgalaxy/favicons#5d92ef0",
+    "generate-robotstxt": "^8.0.3",
+    "git-rev-sync": "^3.0.1",
+    "glob": "^7.1.6",
+    "glslify-loader": "^2.0.0",
+    "highlight.js": "^10.7.2",
+    "html-loader": "^2.1.2",
+    "html-validator": "^5.1.17",
+    "html-webpack-plugin": "^5.3.1",
+    "html-webpack-processing-plugin": "^1.0.1",
+    "image-webpack-loader": "^7.0.1",
+    "imagemin": "^8.0.0",
+    "imagemin-webp": "^6.0.0",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
+    "markdown-it": "^12.0.6",
+    "markdown-it-attrs": "^4.0.0",
+    "markdown-it-loader": "^0.7.0",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "obsolete-webpack-plugin": "^0.5.6",
+    "postcss": "^8.2.13",
+    "postcss-import": "^14.0.1",
+    "postcss-load-config": "^3.0.1",
+    "postcss-loader": "^5.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "posthtml": "^0.15.2",
+    "prettier": "^2.2.1",
+    "purgecss-webpack-plugin": "^4.0.3",
+    "sass-loader": "^11.0.1",
+    "sharp": "^0.28.1",
+    "shortid": "^2.2.16",
+    "sitemap": "^7.0.0",
+    "style-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^5.0.0",
+    "svg-sprite-loader": "^6.0.6",
+    "svgo": "^2.3.0",
+    "svgo-loader": "^3.0.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^4.0.0-beta.2",
+    "webpack-spritesmith": "^1.1.0",
+    "workbox-webpack-plugin": "^6.1.5"
+  },
+  "engines": {
+    "node": ">=15.0.0",
+    "npm": ">=7.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "**/*.{svg,xml}",
+        "options": {
+          "printWidth": 9999,
+          "xmlWhitespaceSensitivity": "ignore"
+        }
+      }
+    ],
+    "plugins": [
+      "./node_modules/@prettier/plugin-xml"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "@babel/eslint-parser",
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": false
+      }
+    },
+    "env": {
+      "browser": true
+    }
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ]
+}
